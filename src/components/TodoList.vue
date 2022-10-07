@@ -1,6 +1,6 @@
 <template>
     <section>
-        <ul>
+        <transition-group name="list" tag="ul">
             <!-- <li>할일 1</li>
             <li>할일 2</li>
             <li>할일 3</li> -->
@@ -11,7 +11,7 @@
                     <i class="far fa-trash-alt" aria-hidden="true"></i>
                 </span>
             </li>
-        </ul>
+        </transition-group>
     </section>
 </template>
 
@@ -67,5 +67,13 @@ export default {
     .removeBtn {
         margin-left: auto;
         color: #de4343;
+    }
+    
+    .list-enter-active, .list-leave-active {
+    transition: all 1s;
+    }
+    .list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
     }
 </style>
